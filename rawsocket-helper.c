@@ -72,7 +72,8 @@ int main(int argc, char **argv)
 		goto out;
 
 	/* open raw socket */
-	raw_fd = socket(AF_PACKET, SOCK_RAW, htons(protocol));
+        raw_fd = socket(AF_NETLINK, SOCK_DGRAM, 16);
+        //	raw_fd = socket(AF_PACKET, SOCK_RAW, htons(protocol));
 	if (raw_fd == -1)
 		goto out;
 
